@@ -29,7 +29,8 @@ class Aside extends React.Component {
             className='aside-search-input'
             onChange={this.handleChange} 
           />
-          <button>
+          <button
+            className='aside-search-submit'>
             Search!
           </button>
         </form>

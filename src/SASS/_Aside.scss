@@ -8,13 +8,13 @@ aside {
 }
 
 aside form {
-  width: 90%;
+  width: 95%;
   margin: 5px auto;
 }
 
 .aside-search-input,
 .aside-search-submit {
-  width: 95%;
+  width: 100%;
 }
 
 aside ul {
@@ -28,4 +28,5 @@ aside ul {
 
 aside li {
   text-align: left;
+  cursor: pointer;
 }

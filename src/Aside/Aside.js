@@ -9,9 +9,12 @@ class Aside extends React.Component {
   }
 
   handleChange = (e) => {
-    e.target.value ? 
-    this.setState({ search: e.target.value }) :
-    this.setState({ search: e.target.innerHTML })
+    this.setState({ search: e.target.value }) 
+  }
+
+  handleClick = (e) => {
+    this.setState({ search: e.target.innerHTML });
+    this.handleSubmit(e);
   }
 
   handleSubmit = (e) => {
@@ -27,6 +30,7 @@ class Aside extends React.Component {
           <input 
             type='search' 
             className='aside-search-input'
+            placeholder='Example: "Earth"'
             onChange={this.handleChange} 
           />
           <button
@@ -37,35 +41,43 @@ class Aside extends React.Component {
         <nav>
           <ul>
             <li
-              onClick={this.handleChange}>
+              value='Mercury'
+              onClick={this.handleClick.bind(this)}>
                 Mercury
             </li>
             <li
-              onClick={this.handleChange}>
+              value='Venus'
+              onClick={this.handleClick}>
                 Venus
             </li>
             <li
-              onClick={this.handleChange}>
+              value='Earth'
+              onClick={this.handleClick}>
                 Earth
             </li>
             <li
-              onClick={this.handleChange}>
+              value='Planet Mars'
+              onClick={this.handleClick}>
                 Mars
             </li>
             <li
-              onClick={this.handleChange}>
+              value='Saturn'
+              onClick={this.handleClick}>
                 Saturn
             </li>
             <li
-              onClick={this.handleChange}>
+              value='Jupiter'
+              onClick={this.handleClick}>
                 Jupiter
             </li>
             <li
-              onClick={this.handleChange}>
+              value='Neptune'
+              onClick={this.handleClick}>
                 Neptune
             </li>
             <li
-              onClick={this.handleChange}>
+              value='Pluto'
+              onClick={this.handleClick}>
                 Pluto
             </li>
           </ul>

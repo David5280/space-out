@@ -1,5 +1,9 @@
 .main-section-display {
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vw;
+  height: 90vh;
+  padding: 5px;
   width: 90vw;
-  padding: 10px;
 }

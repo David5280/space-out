@@ -1,9 +1,10 @@
 import React from 'react';
 
-const InfoContainer = ({ description }) => {
+const InfoContainer = ({ description, imagePreview }) => {
   return (
     <article className='single-article'>
-      <p>{description}</p>
+      <img src={imagePreview} alt='' className='single-image'/>
+      {/* <p>{description}</p> */}
     </article>
   )
 }

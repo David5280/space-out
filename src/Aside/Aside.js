@@ -58,7 +58,7 @@ class Aside extends React.Component {
             </li>
             <li
               onClick={this.handleChange}>
-                Jupitor
+                Jupiter
             </li>
             <li
               onClick={this.handleChange}>

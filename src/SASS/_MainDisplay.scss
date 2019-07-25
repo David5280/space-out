@@ -1,9 +1,13 @@
 .main-section-display {
+  // column-count: 5;
+  // column-gap: 0;
+  width: 95vw;
+  overflow: scroll;
+  padding: 10px;
+  max-width: 90vw;
+  max-height: 90vh;
+  // display: flex;
+  // flex-wrap: wrap;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  height: 100vw;
-  height: 90vh;
-  padding: 5px;
-  width: 90vw;
 }

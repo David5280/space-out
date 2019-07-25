@@ -1,5 +1,6 @@
 import React from 'react';
 import { getSearchData } from './Utilz/apiCalls';
+import Header from './Header/Header';
 import './App.css';
 
 class App extends React.Component {
@@ -11,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-  
+        <Header />
       </div>
     )
   }

@@ -8,7 +8,10 @@ export const getSearchData = async (search) => {
       throw new Error('Error fetching Data')
     }
     const data = await response.json()
-    return data.collection
+    // const cleanData = await cleanSearchData(data);
+    // console.log(cleanData)
+    // return cleanData
+    return data.collection.items
   } catch {
     throw new Error('Problem with server')
   }

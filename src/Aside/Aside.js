@@ -1,20 +1,67 @@
 import React from 'react';
 
 class Aside extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      search: ''
+    }
+  }
+
+  handleChange = (e) => {
+    e.target.value ? 
+    this.setState({ search: e.target.value }) :
+    this.setState({ search: e.target.innerHTML })
+  }
+
   render() {
     return(
       <aside>
-        <input type='search' className='aside-search-input' />
+        <form
+          onSubmit={this.handleSubmit}>
+          <input 
+            type='search' 
+            className='aside-search-input'
+            onChange={this.handleChange} 
+          />
+          <button>
+            Search!
+          </button>
+        </form>
         <nav>
           <ul>
-            <li>Mercury</li>
-            <li>Venus</li>
-            <li>Earth</li>
-            <li>Mars</li>
-            <li>Saturn</li>
-            <li>Jupitor</li>
-            <li>Neptune</li>
-            <li>Pluto</li>
+            <li
+              onClick={this.handleChange}>
+                Mercury
+            </li>
+            <li
+              onClick={this.handleChange}>
+                Venus
+            </li>
+            <li
+              onClick={this.handleChange}>
+                Earth
+            </li>
+            <li
+              onClick={this.handleChange}>
+                Mars
+            </li>
+            <li
+              onClick={this.handleChange}>
+                Saturn
+            </li>
+            <li
+              onClick={this.handleChange}>
+                Jupitor
+            </li>
+            <li
+              onClick={this.handleChange}>
+                Neptune
+            </li>
+            <li
+              onClick={this.handleChange}>
+                Pluto
+            </li>
           </ul>
         </nav>
       </aside>

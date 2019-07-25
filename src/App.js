@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import { getSearchData } from './Utilz/apiCalls';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    getSearchData()
+    .then(data => console.log('a', data))
+    .catch(error => error.message)
+  }
+  render() {
+    return (
+      <div className="App">
+  
+      </div>
+    )
+  }
 }
 
 export default App;

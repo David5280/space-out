@@ -2,21 +2,23 @@ import React from 'react';
 import { getData } from './Utilz/apiCalls';
 import Header from './Header/Header';
 import Aside from './Aside/Aside';
+import MainDisplay from './MainDisplay/MainDisplay';
 import './SASS/Index.scss';
 
 class App extends React.Component {
   constructor() {
     super()
-    this.state = []
+    this.state = {
+      data: []
+    }
   }
   componentDidMount() {
     this.retrieveData()
   }
 
   retrieveData = (searchText) => {
-    console.log(searchText)
     getData(searchText)
-    .then(data => this.setState(data))
+    .then(data => this.setState({ data:  data }))
     .catch(error => error.message)
   }
 
@@ -24,7 +26,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Aside retrieveData={this.retrieveData}/>
+        {this.state.data &&
+        <main>
+          <Aside retrieveData={this.retrieveData} />
+          <MainDisplay data={this.state.data} />
+        </main>}
       </div>
     )
   }

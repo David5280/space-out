@@ -11,6 +11,7 @@ export const getData = async (search) => {
     // const cleanData = await cleanSearchData(data);
     // console.log(cleanData)
     // return cleanData
+    console.log(data.collection.items)
     return data.collection.items
   } catch {
     throw new Error('Problem with server')

@@ -1,7 +1,7 @@
 import React from 'react';
 import { getSearchData } from './Utilz/apiCalls';
 import Header from './Header/Header';
-import './App.css';
+import './SASS/Index.scss';
 
 class App extends React.Component {
   componentDidMount() {

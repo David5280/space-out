@@ -14,6 +14,11 @@ class Aside extends React.Component {
     this.setState({ search: e.target.innerHTML })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.retrieveData(this.state.search)
+  }
+
   render() {
     return(
       <aside>

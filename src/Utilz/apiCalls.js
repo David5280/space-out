@@ -1,7 +1,7 @@
 import { cleanSearchData } from './cleaner.js';
 
-export const getSearchData = async (search) => {
-  const query = 'Earth' || search;
+export const getData = async (search) => {
+  const query = search || 'Earth';
   try {
     const response = await fetch(`https://images-api.nasa.gov/search?q=${query}&media_type=image`);
     if (!response.ok) {

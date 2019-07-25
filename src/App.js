@@ -1,6 +1,7 @@
 import React from 'react';
 import { getSearchData } from './Utilz/apiCalls';
 import Header from './Header/Header';
+import Aside from './Aside/Aside';
 import './SASS/Index.scss';
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
+        <Aside />
       </div>
     )
   }

@@ -1,25 +1,20 @@
 import React from 'react';
 import { getData } from './Utilz/apiCalls';
+import { loadPlanets } from './actions';
 import Header from './Header/Header';
 import Aside from './Aside/Aside';
 import MainDisplay from './MainDisplay/MainDisplay';
+import { connect } from 'react-redux';
 import './SASS/Index.scss';
 
 class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      data: []
-    }
-  }
-
   componentDidMount() {
     this.retrieveData()
   }
 
   retrieveData = () => {
     getData()
-    .then(data => this.setState({ data:  data }))
+    .then(data => this.props.loadPlanets(data))
     .catch(error => error.message)
   }
 
@@ -27,14 +22,22 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        {this.state.data &&
+        {this.props.planets &&
         <main>
-          <Aside retrieveData={this.retrieveData} />
-          <MainDisplay data={this.state.data} />
+          <Aside />
+          <MainDisplay planets={this.props.planets} />
         </main>}
       </div>
     )
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  planets:  state.planets
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  loadPlanets: (planets) => dispatch(loadPlanets(planets))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

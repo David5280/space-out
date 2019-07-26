@@ -1,6 +1,6 @@
 export const getData = async (search) => {
   try {
-    const response = await fetch(`https://api.sheety.co/74bca3ba-733d-4e36-ac49-c165bee1a06d`);
+    const response = await fetch(`https://api.sheety.co/245cfb46-b5bf-41de-b58b-e63f721aa2e6`);
     if (!response.ok) {
       throw new Error('Error fetching Data')
     }

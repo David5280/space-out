@@ -1,15 +1,16 @@
 aside {
+  border-right: 1px solid black;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid black;
-  width: 10vw;
-  padding: 5px;
   height: 90vh;
+  min-width: 150px;
+  padding: 5px;
+  width: 10vw;
 }
 
 aside form {
-  width: 95%;
   margin: 5px auto;
+  width: 95%;
 }
 
 .aside-search-input,
@@ -18,14 +19,14 @@ aside form {
 }
 
 aside ul {
-  height: 40vh;
   display: flex;
   flex-direction: column;
-  list-style: none;
+  height: 40vh;
   justify-content: space-evenly;
+  list-style: none;
 }
 
 aside li {
-  text-align: left;
   cursor: pointer;
+  text-align: left;
 }

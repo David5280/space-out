@@ -5,26 +5,36 @@
 }
 
 .planet-info-image {
+  width: 100vw;
   height: 90vh;
-  z-index: -1;
-  background-image: cover;
+  object-fit: cover;
 }
 
 .planet-info-title {
-  position: relative;
   color: white;
-  font-size: 3vw;
-  left: 10vh;
+  font-size: 24px;
+}
+
+.planet-info-left-top {
   bottom: 85vh;
+  left: 1vw;
+  position: relative;
+  width: 22%;
+  z-index: 2;
+}
+
+.planet-info-left-bottom {
+  position: relative;
+  z-index: 2;
+  bottom: 80vh;
+  left: 1vw;
+  width: 22%;
+
 }
 
 .planet-info-description {
-  position: relative;
   color: white;
-  left: 5vh;
-  bottom: 85vh;
-  width: 20%;
-  font-size: 1.5vw;
+  font-size: 14px;
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   padding: 5px 0px;

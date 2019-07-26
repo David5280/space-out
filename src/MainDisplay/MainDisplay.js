@@ -6,7 +6,7 @@ const MainDisplay = ({ planets }) => {
     return (
       <InfoContainer 
       description={planet.description}
-      image={planet.image}
+      cutout={planet.cutout}
       key={planet.id}/>
     )
   })

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const InfoContainer = ({ image, title }) => {
+const InfoContainer = ({ cutout, title }) => {
   return (
     <article className='single-article'>
       <img 
-        src={image} 
+        src={cutout} 
         alt={title} 
         className='planet-home-image'
       />

@@ -7,13 +7,20 @@ header {
   background-color: black;
   color: white;
   padding: 10px;
+  box-shadow: 0px 10px 18px black;
+  position: relative;
+  & a {
+    text-decoration: none;
+    color: white;
+    margin: 0px 10px;
+    font-size: 1.5vw;
+  }
 }
 
 h1 {
-  font-size: 5vw;
+  font-size: 4vw;
 }
 
 .header-nav {
-  width: fit-content;
-  text-decoration: none;
+  width: 60vw;
 }

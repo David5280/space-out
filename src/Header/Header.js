@@ -1,5 +1,6 @@
 import React from 'react'
 import ListItem from '../ListItem/ListItem';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Header = (props) => {
@@ -8,7 +9,11 @@ const Header = (props) => {
   })
   return (
     <header>
-      <h1>SPACE-OUT</h1>
+      <NavLink to='/'>
+        <h1>
+          SPACE-OUT
+        </h1>
+      </NavLink>
       <section className='header-nav'>
         {items}
       </section>

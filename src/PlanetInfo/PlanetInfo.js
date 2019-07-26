@@ -5,7 +5,8 @@ const PlanetInfo = ({ planet }) => {
   return (
     <section className='planet-info'>
       <img src={planet.image} alt={`${planet.title}`} className='planet-info-image'/>
-      <h2>{planet.title}</h2>
+      <h2 className='planet-info-title planet-info-text'>{planet.title}</h2>
+      <p className='planet-info-description planet-info-text'>{planet.description}</p>
     </section>
   )
 }

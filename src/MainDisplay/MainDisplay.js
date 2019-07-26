@@ -7,9 +7,11 @@ const MainDisplay = ({ planets }) => {
   const dataToDisplay = planets.map(planet => {
     return (
       <InfoContainer 
-      description={planet.description}
-      cutout={planet.cutout}
-      key={planet.id}/>
+        title={planet.title}
+        description={planet.description}
+        cutout={planet.cutout}
+        key={planet.id}
+      />
     )
   })
   const routes = planets.map(planet => {
@@ -19,8 +21,8 @@ const MainDisplay = ({ planets }) => {
   })
   return (
     <section className='main-section-display'>
-      {routes}
-      {planets && <Route exact path='/all' component={() => dataToDisplay} />}
+    {routes}
+      {planets && <Route exact path='/' render={() => dataToDisplay} />}
     </section>
   )
 }

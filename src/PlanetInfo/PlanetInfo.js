@@ -4,7 +4,8 @@ const PlanetInfo = ({ planet }) => {
   console.log(planet.title)
   return (
     <section className='planet-info'>
-      <h1>{planet.title}</h1>
+      <img src={planet.image} alt={`${planet.title}`} className='planet-info-image'/>
+      <h2>{planet.title}</h2>
     </section>
   )
 }

@@ -1,4 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import ListItem from '../ListItem/ListItem';
+import PlanetInfo from '../PlanetInfo/PlanetInfo';
 
 class Aside extends React.Component {
   constructor() {
@@ -13,7 +17,6 @@ class Aside extends React.Component {
   }
 
   handleClick = (e) => {
-    this.setState({ search: e.target.innerHTML });
     this.handleSubmit(e);
   }
 
@@ -22,7 +25,14 @@ class Aside extends React.Component {
     this.props.retrieveData(this.state.search)
   }
 
+  
   render() {
+    const listItems = this.props.planets.map(planet => {
+        return (
+          <ListItem 
+            planet={planet} 
+            onClick={<Route exact path={`/${planet.title}`} render={() => <PlanetInfo planet={planet} />}/>} />)
+      })
     return(
       <aside>
         <form
@@ -40,46 +50,7 @@ class Aside extends React.Component {
         </form>
         <nav>
           <ul>
-            <li
-              value='Mercury'
-              onClick={this.handleClick.bind(this)}>
-                Mercury
-            </li>
-            <li
-              value='Venus'
-              onClick={this.handleClick}>
-                Venus
-            </li>
-            <li
-              value='Earth'
-              onClick={this.handleClick}>
-                Earth
-            </li>
-            <li
-              value='Planet Mars'
-              onClick={this.handleClick}>
-                Mars
-            </li>
-            <li
-              value='Saturn'
-              onClick={this.handleClick}>
-                Saturn
-            </li>
-            <li
-              value='Jupiter'
-              onClick={this.handleClick}>
-                Jupiter
-            </li>
-            <li
-              value='Neptune'
-              onClick={this.handleClick}>
-                Neptune
-            </li>
-            <li
-              value='Pluto'
-              onClick={this.handleClick}>
-                Pluto
-            </li>
+            {listItems}
           </ul>
         </nav>
       </aside>
@@ -87,4 +58,8 @@ class Aside extends React.Component {
   }
 }
 
-export default Aside;
+const mapStateToProps = (state) => ({
+  planets: state.planets
+})
+
+export default connect(mapStateToProps)(Aside);

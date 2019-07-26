@@ -16,8 +16,9 @@ class App extends React.Component {
     this.retrieveData()
   }
 
-  retrieveData = (searchText) => {
-    getData(searchText)
+  retrieveData = () => {
+    getData()
+    .then(data => console.log(data))
     .then(data => this.setState({ data:  data }))
     .catch(error => error.message)
   }

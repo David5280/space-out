@@ -12,13 +12,13 @@ class App extends React.Component {
       data: []
     }
   }
+
   componentDidMount() {
     this.retrieveData()
   }
 
   retrieveData = () => {
     getData()
-    .then(data => console.log(data))
     .then(data => this.setState({ data:  data }))
     .catch(error => error.message)
   }

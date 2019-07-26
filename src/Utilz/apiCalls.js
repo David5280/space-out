@@ -1,9 +1,6 @@
-import { cleanSearchData } from './cleaner.js';
-
 export const getData = async (search) => {
-  // const query = search || 'Earth';
   try {
-    const response = await fetch(`https://api.sheety.co/8ea453d3-272f-4ea9-b112-5fd6de71ddcf`);
+    const response = await fetch(`https://api.sheety.co/74bca3ba-733d-4e36-ac49-c165bee1a06d`);
     if (!response.ok) {
       throw new Error('Error fetching Data')
     }

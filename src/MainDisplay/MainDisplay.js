@@ -5,8 +5,8 @@ const MainDisplay = ({ data }) => {
   const dataToDisplay = data.map(datum => {
     return (
       <InfoContainer 
-      description={datum.data[0].description_508}
-      imagePreview={datum.links[0].href}/>
+      description={datum.description}
+      imagePreview={datum.image}/>
     )
   })
   return (

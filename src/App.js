@@ -2,7 +2,6 @@ import React from 'react';
 import { getData } from './Utilz/apiCalls';
 import { loadPlanets } from './actions';
 import Header from './Header/Header';
-import Aside from './Aside/Aside';
 import MainDisplay from './MainDisplay/MainDisplay';
 import { connect } from 'react-redux';
 import './SASS/Index.scss';
@@ -24,7 +23,6 @@ class App extends React.Component {
         <Header />
         {this.props.planets &&
         <main>
-          <Aside />
           <MainDisplay planets={this.props.planets} />
         </main>}
       </div>

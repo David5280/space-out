@@ -2,7 +2,7 @@ import React from 'react';
 
 const InfoContainer = ({ cutout, title }) => {
   return (
-    <article className='single-article'>
+    <article className={`single-article ${title}-cutout`}>
       <img 
         src={cutout} 
         alt={title} 

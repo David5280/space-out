@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
 import ListItem from '../ListItem/ListItem';
-import PlanetInfo from '../PlanetInfo/PlanetInfo';
 
 class Aside extends React.Component {
   constructor() {
@@ -24,15 +22,11 @@ class Aside extends React.Component {
     e.preventDefault()
     this.props.retrieveData(this.state.search)
   }
-
   
   render() {
-    const listItems = this.props.planets.map(planet => {
-        return (
-          <ListItem 
-            planet={planet} 
-            onClick={<Route exact path={`/${planet.title}`} render={() => <PlanetInfo planet={planet} />}/>} />)
-      })
+    const items = this.props.planets.map(planet => {
+      return <ListItem planet={planet} />
+    })
     return(
       <aside>
         <form
@@ -50,7 +44,7 @@ class Aside extends React.Component {
         </form>
         <nav>
           <ul>
-            {listItems}
+            {items}
           </ul>
         </nav>
       </aside>

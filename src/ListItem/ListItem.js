@@ -1,8 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const ListItem = ({ planet }) => {
   return (
-    <li>{planet.title}</li>
+    <NavLink to={`/${planet.title}`}>{planet.title}</NavLink>
   )
 }
 

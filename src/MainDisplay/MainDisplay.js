@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import InfoContainer from '../InfoContainer/InfoContainer';
+import PlanetInfo from '../PlanetInfo/PlanetInfo';
 
 const MainDisplay = ({ planets }) => {
   const dataToDisplay = planets.map(planet => {
@@ -11,9 +12,15 @@ const MainDisplay = ({ planets }) => {
       key={planet.id}/>
     )
   })
+  const routes = planets.map(planet => {
+    return (
+      <Route exact path={`/${planet.title}`} render={() => <PlanetInfo planet={planet} />} />
+    )
+  })
   return (
     <section className='main-section-display'>
-      {planets && <Route exact path='/' component={() => dataToDisplay} />}
+      {routes}
+      {planets && <Route exact path='/all' component={() => dataToDisplay} />}
     </section>
   )
 }

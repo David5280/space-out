@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { getData } from './Utilz/apiCalls';
+import { loadPlanets } from './actions';
+import Header from './Header/Header';
+import Aside from './Aside/Aside';
+import MainDisplay from './MainDisplay/MainDisplay';
+import { connect } from 'react-redux';
+import './SASS/Index.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    this.retrieveData()
+  }
+
+  retrieveData = () => {
+    getData()
+    .then(data => this.props.loadPlanets(data))
+    .catch(error => error.message)
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        {this.props.planets &&
+        <main>
+          <Aside />
+          <MainDisplay planets={this.props.planets} />
+        </main>}
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  planets:  state.planets
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  loadPlanets: (planets) => dispatch(loadPlanets(planets))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,0 +1,10 @@
+.main-section-display {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 90vh;
+  max-width: 90vw;
+  overflow: scroll;
+  padding: 10px;
+  width: 95vw;
+}

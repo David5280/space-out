@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.planet-info-left-top {
+.planet-info-top-left {
   bottom: 88vh;
   left: 1vw;
   position: relative;
@@ -25,11 +25,20 @@
   z-index: 2;
 }
 
-.planet-info-left-bottom {
+.planet-info-bottom-left {
   position: relative;
   z-index: 2;
   bottom: 85vh;
   left: 1vw;
+  width: 22%;
+  font-size: 1.2vw;
+}
+
+.planet-info-top-right {
+  position: relative;
+  z-index: 2;
+  top: -170vh;
+  right: -75vw;
   width: 22%;
   font-size: 1.2vw;
 }
@@ -42,6 +51,7 @@
   padding: 5px 0px;
 }
 
-h3 {
+h3,
+.planet-info-title {
   margin-top: 10px;
 }

@@ -8,15 +8,17 @@
   width: 100vw;
   height: 90vh;
   object-fit: cover;
+  object-position: center;
 }
 
 .planet-info-title {
   color: white;
-  font-size: 24px;
+  font-size: 1.5vw;
+  text-align: center;
 }
 
 .planet-info-left-top {
-  bottom: 85vh;
+  bottom: 88vh;
   left: 1vw;
   position: relative;
   width: 22%;
@@ -26,16 +28,20 @@
 .planet-info-left-bottom {
   position: relative;
   z-index: 2;
-  bottom: 80vh;
+  bottom: 85vh;
   left: 1vw;
   width: 22%;
-
+  font-size: 1.2vw;
 }
 
 .planet-info-description {
   color: white;
-  font-size: 14px;
+  font-size: 1.2vw;
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   padding: 5px 0px;
+}
+
+h3 {
+  margin-top: 10px;
 }

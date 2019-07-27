@@ -16,11 +16,15 @@ describe('App', () => {
       const props = {
         loadPlanets: jest.fn(),
       }
-      wrapper = shallow(<App {...props} />, {disableLifecycleMethods: true})
+      wrapper = shallow(<App {...props} />)
     })
     it('should match snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
+    it('calls retrieveData when mounted', () => {
+      const retrieveData = jest.fn()
+      expect(retrieveData).toHaveBeenCalled();
+    })
   });
   describe('mapStateToProps', () => {
     it('should return an object with the planets array', () => {

@@ -1,26 +1,29 @@
-export const cleanPlanetData = (data) => {
-  const cleanPlanets = data.map(planet => {
+const cleanPlanetData = (data) => {
+return data.map(planet => {
     return {
-      title: planet.title,
-      description: planet.description,
-      image: planet.image,
-      cutout: planet.cutout,
       atmosphere: planet.atmosphere,
-      sunRevolution: planet.sunRevolution,
-      moons: planet.moons,
-      travelTime: planet.travelTime,
-      milesFromSun: planet.milesFromSun,
-      successfulMissions: planet.successfulMissions,
-      dayLength: planet.dayLength,
       averageTemp: planet.averageTemp,
-      namesake: planet.nameSake,
-      discovery: planet.discovery,
+      climate: planet.climate,
+      cutout: planet.cutout,
+      dayLength: planet.dayLength,
+      description: planet.description,
       diameter: planet.diameter,
+      discovery: planet.discovery,
       gravity: planet.gravity,
+      id: planet.id,
+      image2: planet.image2,
+      image: planet.image,
       isFavored: false,
       key: planet.id,
-      climate: planet.climate
-    }
-  })
-  return cleanPlanets;
-}
+      milesFromSun: planet.milesFromSun,
+      moons: planet.moons,
+      namesake: planet.namesake,
+      successfulMissions: planet.successfulMissions,
+      sunRevolution: planet.sunRevolution,
+      title: planet.title,
+      travelTime: planet.travelTime
+    };
+  });
+};
+
+export default cleanPlanetData;

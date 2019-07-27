@@ -1,4 +1,4 @@
-import { cleanPlanetData } from './cleaner';
+import cleanPlanetData from './cleaner';
 
 export const getData = async () => {
   try {
@@ -7,9 +7,9 @@ export const getData = async () => {
       throw new Error('Error fetching Data')
     }
     const data = await response.json()
-    const cleanData = cleanPlanetData(data)
-    return cleanData
-  } catch {
-    throw new Error('Problem with server')
+    const planets = cleanPlanetData(data)
+    return planets
+  } catch ({ message }){
+    throw new Error(message)
   }
-}
+};

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const PlanetInfo = ({ planet }) => {
-  console.log(planet.title)
   return (
     <section className='planet-info'>
       <img src={planet.image} alt={`${planet.title}`} className='planet-info-image'/>
@@ -24,7 +23,7 @@ const PlanetInfo = ({ planet }) => {
         <p>{planet.sunRevolution} Earth days.</p>
       </article>
       <article className='planet-info-right'>
-        <h3 className='planet-info-title'>Climate:</h3>
+        <h3>Climate:</h3>
         <p className='planet-info-climate'>{planet.climate}</p>
         <h3>Diameter:</h3>
         <p>{planet.diameter}</p>

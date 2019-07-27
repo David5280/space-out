@@ -8,23 +8,27 @@ const MainDisplay = ({ planets }) => {
     return (
       <InfoContainer 
         title={planet.title}
-        description={planet.description}
         cutout={planet.cutout}
-        key={planet.id}
+        key={planet.key}
       />
     )
-  })
+  });
   const routes = planets.map(planet => {
     return (
-      <Route exact path={`/${planet.title}`} render={() => <PlanetInfo planet={planet} />} />
+      <Route 
+        exact path={`/${planet.title}`} 
+        render={() => <PlanetInfo planet={planet}
+        />
+      } key={planet.key}
+      />
     )
-  })
+  });
   return (
     <section className='main-section-display'>
     {routes}
-      {planets && <Route exact path='/' render={() => dataToDisplay} />}
+    {planets && <Route exact path='/' render={() => dataToDisplay} />}
     </section>
   )
-}
+};
 
 export default MainDisplay;

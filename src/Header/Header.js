@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 
 const Header = (props) => {
   const items = props.planets.map(planet => {
-    return <ListItem planet={planet} className='header-nav-item'/>
+    return <ListItem 
+              planet={planet} 
+              className='header-nav-item'
+              key={planet.id}
+            />
   })
   return (
     <header>

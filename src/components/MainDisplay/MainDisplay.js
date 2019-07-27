@@ -9,7 +9,7 @@ const MainDisplay = ({ planets }) => {
       <InfoContainer 
         title={planet.title}
         cutout={planet.cutout}
-        key={planet.id}
+        key={planet.key}
       />
     )
   });
@@ -19,14 +19,14 @@ const MainDisplay = ({ planets }) => {
         exact path={`/${planet.title}`} 
         render={() => <PlanetInfo planet={planet}
         />
-      } key={planet.id}
+      } key={planet.key}
       />
     )
   });
   return (
     <section className='main-section-display'>
     {routes}
-      {planets && <Route exact path='/' render={() => dataToDisplay} />}
+    {planets && <Route exact path='/' render={() => dataToDisplay} />}
     </section>
   )
 };

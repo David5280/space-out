@@ -1,10 +1,10 @@
 import React from 'react';
-import { getData } from './Utilz/apiCalls';
-import { loadPlanets } from './actions';
-import Header from './Header/Header';
-import MainDisplay from './MainDisplay/MainDisplay';
+import { getData } from '../../Utilz/apiCalls';
+import { loadPlanets } from '../../actions';
+import Header from '../../components/Header/Header';
+import MainDisplay from '../../components/MainDisplay/MainDisplay';
 import { connect } from 'react-redux';
-import './SASS/Index.scss';
+import '../../SASS/Index.scss';
 
 class App extends React.Component {
   componentDidMount() {

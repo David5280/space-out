@@ -1,6 +1,6 @@
 import React from 'react';
 import { getData } from '../../Utilz/apiCalls';
-import { loadPlanets } from '../../actions';
+import { loadPlanets, loadComplete } from '../../actions';
 import Header from '../../components/Header/Header';
 import MainDisplay from '../../components/MainDisplay/MainDisplay';
 import { connect } from 'react-redux';
@@ -12,8 +12,10 @@ export class App extends React.Component {
   }
 
   retrieveData = () => {
+    const { loadPlanets, loadComplete } = this.props;
     getData()
-    .then(data => this.props.loadPlanets(data))
+    .then(data => loadPlanets(data))
+    .then(() => loadComplete())
     .catch(error => error.message)
   }
 
@@ -21,6 +23,7 @@ export class App extends React.Component {
     return (
       <div className="App">
         <Header />
+        {this.props.loading && <h2>LOADING</h2>}
         {this.props.planets &&
         <main>
           <MainDisplay planets={this.props.planets} />
@@ -31,11 +34,13 @@ export class App extends React.Component {
 }
 
 export const mapStateToProps = (state) => ({
-  planets:  state.planets
+  planets:  state.planets,
+  loading: state.loading
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  loadPlanets: (planets) => dispatch(loadPlanets(planets))
+  loadPlanets: (planets) => dispatch(loadPlanets(planets)),
+  loadComplete: () => dispatch(loadComplete())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

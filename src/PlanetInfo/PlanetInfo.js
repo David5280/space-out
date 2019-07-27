@@ -1,7 +1,6 @@
 import React from 'react';
 
 const PlanetInfo = ({ planet }) => {
-  console.log(planet.title)
   return (
     <section className='planet-info'>
       <img src={planet.image} alt={`${planet.title}`} className='planet-info-image'/>

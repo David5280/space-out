@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import InfoContainer from '../InfoContainer/InfoContainer';
+import PlanetCutout from '../PlanetCutout/PlanetCutout';
 import PlanetInfo from '../PlanetInfo/PlanetInfo';
 
 const MainDisplay = ({ planets }) => {
   const dataToDisplay = planets.map(planet => {
     return (
-      <InfoContainer 
+      <PlanetCutout 
         title={planet.title}
         cutout={planet.cutout}
         key={planet.key}

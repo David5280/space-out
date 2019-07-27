@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReactDOM from 'react-dom';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { loadPlanets } from '../../actions'; 
 

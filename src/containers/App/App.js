@@ -6,7 +6,7 @@ import MainDisplay from '../../components/MainDisplay/MainDisplay';
 import { connect } from 'react-redux';
 import '../../SASS/Index.scss';
 
-class App extends React.Component {
+export class App extends React.Component {
   componentDidMount() {
     this.retrieveData()
   }
@@ -30,11 +30,11 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   planets:  state.planets
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   loadPlanets: (planets) => dispatch(loadPlanets(planets))
 })
 

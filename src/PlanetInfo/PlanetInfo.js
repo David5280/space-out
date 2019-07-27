@@ -23,9 +23,21 @@ const PlanetInfo = ({ planet }) => {
         <h3>1 Year:</h3>
         <p>{planet.sunRevolution} Earth days.</p>
       </article>
-      <article className='planet-info-top-right'>
-        <h2 className='planet-info-title'>Climate:</h2>
-        <p>{planet.climate}</p>
+      <article className='planet-info-right'>
+        <h3 className='planet-info-title'>Climate:</h3>
+        <p className='planet-info-climate'>{planet.climate}</p>
+        <h3>Diameter:</h3>
+        <p>{planet.diameter}</p>
+        <h3>Average Temperature:</h3>
+        <p>{planet.averageTemp} degrees fahrenheit</p>
+        <h3>Length of One Day:</h3>
+        <p>{planet.dayLength}</p>
+        <h3>Name-Sake:</h3>
+        <p>{planet.nameSake}</p>
+        <h3>Discovered:</h3>
+        <p>{planet.discovery}</p>
+        <h3>Successful Missions:</h3>
+        <p>{planet.successfulMissions}</p>
       </article>
     </section>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const InfoContainer = ({ cutout, title }) => {
+const PlanetCutout = ({ cutout, title }) => {
   return (
     <article className={`single-article ${title}-cutout`}>
       <NavLink to={`${title}`} >
@@ -15,4 +15,4 @@ const InfoContainer = ({ cutout, title }) => {
   )
 }
 
-export default InfoContainer;
+export default PlanetCutout;

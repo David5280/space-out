@@ -32,7 +32,7 @@ const PlanetInfo = ({ planet }) => {
         <h3>Length of One Day:</h3>
         <p>{planet.dayLength}</p>
         <h3>Name-Sake:</h3>
-        <p>{planet.nameSake}</p>
+        <p>{planet.namesake}</p>
         <h3>Discovered:</h3>
         <p>{planet.discovery}</p>
         <h3>Successful Missions:</h3>

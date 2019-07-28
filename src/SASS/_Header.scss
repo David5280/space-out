@@ -45,6 +45,9 @@ h1 {
   z-index: 3;
   & a {
     margin: 10px 0px;
+    &:hover {
+      color: grey;
+    }
   }
 }
 

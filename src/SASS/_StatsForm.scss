@@ -46,13 +46,17 @@
     text-decoration: none;
     font-size: 1.5rem;
     margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
   }
 }
 
 .stats-link-option {
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 20%;
 }
 
 .stats-cutout {

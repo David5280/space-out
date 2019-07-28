@@ -34,25 +34,29 @@ class StatsForm extends React.Component {
   render() {
     const planetOptions = this.props.planets.map(planet => {
         return (
-          <div className='stats-link-option'>
+          <div 
+            className='stats-link-option'
+            key={planet.title}
+          >
             <NavLink 
               to={`/your-stats/${planet.title}`} 
-              key={planet.id} 
               >
               {planet.title}
-            </NavLink>
             <img 
               src={planet.cutout} 
               alt={`${planet.title}-cutout`} 
               className='stats-cutout' 
-              key={planet.title}/>
+            />
+            </NavLink>
           </div>
         )
       })
     return(
       <section className='form-container'>
         {
-          (!this.props.user.name) &&
+          (!this.props.user.name &&
+            !this.props.user.age &&
+            !this.props.user.weight) &&
             <form className='stats-form'>
             <input 
               className='stats-form-input' 

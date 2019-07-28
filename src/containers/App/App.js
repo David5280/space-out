@@ -3,6 +3,7 @@ import { getData } from '../../Utilz/apiCalls';
 import { loadPlanets, loadComplete } from '../../actions';
 import Header from '../../components/Header/Header';
 import MainDisplay from '../../components/MainDisplay/MainDisplay';
+import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 import { connect } from 'react-redux';
 import '../../SASS/Index.scss';
 
@@ -23,7 +24,7 @@ export class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        {this.props.loading && <h2>LOADING</h2>}
+        {this.props.loading && <LoadingDisplay />}
         {this.props.planets &&
         <main>
           <MainDisplay planets={this.props.planets} />

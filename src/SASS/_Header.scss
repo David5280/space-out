@@ -19,11 +19,17 @@ header {
 
 h1 {
   font-size: 4vw;
+  &:hover {
+    color: grey;
+  }
 }
 
 .header-menu-icon {
   width: 75px;
   object-fit: contain;
+  &:hover {
+    fill: grey;
+  }
 }
 
 .header-dropdown {
@@ -44,7 +50,7 @@ h1 {
   right: 0%;
   z-index: 3;
   & a {
-    margin: 10px 0px;
+    margin: 5px 0px;
     &:hover {
       color: grey;
     }

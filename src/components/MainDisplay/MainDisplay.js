@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import PlanetCutout from '../PlanetCutout/PlanetCutout';
 import PlanetInfo from '../PlanetInfo/PlanetInfo';
+import StatsForm from '../../containers/StatsForm/StatsForm';
 import PropTypes from 'prop-types';
 
 const MainDisplay = ({ planets }) => {
@@ -24,9 +25,13 @@ const MainDisplay = ({ planets }) => {
       />
     )
   });
+  const statsForm = () => {
+    return <StatsForm />
+  }
   return (
     <main className='main-section-display'>
     {routes}
+    <Route exact path='/enter-stats' component={statsForm} />
     {planets && <Route exact path='/' render={() => dataToDisplay} />}
     </main>
   )

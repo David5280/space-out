@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import PlanetCutout from '../PlanetCutout/PlanetCutout';
 import PlanetInfo from '../PlanetInfo/PlanetInfo';
+import PropTypes from 'prop-types';
 
 const MainDisplay = ({ planets }) => {
   const dataToDisplay = planets.map(planet => {
@@ -24,11 +25,15 @@ const MainDisplay = ({ planets }) => {
     )
   });
   return (
-    <section className='main-section-display'>
+    <main className='main-section-display'>
     {routes}
     {planets && <Route exact path='/' render={() => dataToDisplay} />}
-    </section>
+    </main>
   )
 };
+
+MainDisplay.propTypes = {
+  planets: PropTypes.array
+}
 
 export default MainDisplay;

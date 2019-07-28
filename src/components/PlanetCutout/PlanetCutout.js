@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 const PlanetCutout = ({ cutout, title }) => {
   return (
@@ -13,6 +15,11 @@ const PlanetCutout = ({ cutout, title }) => {
       </NavLink>
     </article>
   )
+}
+
+PlanetCutout.propTypes = {
+  cutout: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 }
 
 export default PlanetCutout;

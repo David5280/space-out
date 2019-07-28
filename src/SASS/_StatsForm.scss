@@ -28,5 +28,33 @@
 
 .stats-greeting {
   color: white;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.stats-planets-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 95%;
+  margin: 20px 0px;
+  & a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 0px 10px;
+  }
+}
+
+.stats-link-option {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+}
+
+.stats-cutout {
+  width: 90%;
 }

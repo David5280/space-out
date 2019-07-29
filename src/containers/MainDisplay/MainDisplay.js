@@ -26,15 +26,12 @@ export const MainDisplay = ({ planets, user }) => {
         />
         } 
         />
-        ((user.name &&
-        user.age && 
-        user.weight) &&
         <Route 
           exact path={`/stats/${planet.title}`} 
           render={() => <UserStats planet={planet} user={user}
         />
         } 
-        />)
+        />
       </div>
     )
   });

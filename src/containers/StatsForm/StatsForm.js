@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { addUser } from '../../actions';
 import { connect } from 'react-redux';
 
-class StatsForm extends React.Component {
+export class StatsForm extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -59,32 +59,32 @@ class StatsForm extends React.Component {
             !this.props.user.weight) &&
             <form className='stats-form'>
             <input 
-              className='stats-form-input' 
+              className='stats-form-input name-input'
               name='name' 
               placeholder='First Name...'
               type='text'
-              onChange={this.handleChange}
+              onChange={(e) => this.handleChange(e)}
               value={this.state.name} 
             />
             <input 
-              className='stats-form-input' 
+              className='stats-form-input age-input' 
               name='age' 
               placeholder='Age...' 
               type='text'
-              onChange={this.handleChange}
+              onChange={(e) => this.handleChange(e)}
               value={this.state.age} 
             />
             <input 
-              className='stats-form-input' 
+              className='stats-form-input weight-input' 
               name='weight'
               placeholder='Weight...  (lbs)' 
               type='text'
-              onChange={this.handleChange}
+              onChange={(e) => this.handleChange(e)}
               value={this.state.weight} 
             />
             <button 
-              className='stats-form-input'
-              onClick={this.handleSubmit}>Submit!</button>
+              className='stats-form-input submit-btn'
+              onClick={(e) => this.handleSubmit(e)}>Submit!</button>
           </form>
         }
         {

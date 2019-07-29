@@ -1,0 +1,46 @@
+.user-stats {
+  background-color: black;
+  width: 100vw;
+  height: 90vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  object-fit: cover;
+}
+
+.user-stats-background-container {
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.user-stats-background {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.Uranus-background,
+.Pluto-background {
+  bottom: 100px;
+}
+
+.Neptune-background {
+  bottom: 150px;
+}
+
+.user-stats-container {
+  position: fixed;
+  top: 100px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, .5);
+  & h3 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  & p {
+    margin: 10px 0px;
+  }
+}

@@ -1,8 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { addUser } from '../../actions';
 import { connect } from 'react-redux';
 
-export class StatsForm extends React.Component {
+class StatsForm extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -31,43 +32,72 @@ export class StatsForm extends React.Component {
   }
 
   render() {
+    const planetOptions = this.props.planets.map(planet => {
+        return (
+          <div 
+            className='stats-link-option'
+            key={planet.title}
+          >
+            <NavLink 
+              to={`/stats/${planet.title}`} 
+              >
+              {planet.title}
+            <img 
+              src={planet.cutout} 
+              alt={`${planet.title}-cutout`} 
+              className='stats-cutout' 
+            />
+            </NavLink>
+          </div>
+        )
+      })
     return(
       <section className='form-container'>
         {
-          (!this.props.user.name) &&
-          <form className='stats-form'>
-          <input 
-            className='stats-form-input' 
-            name='name' 
-            placeholder='First Name...'
-            type='text'
-            onChange={this.handleChange}
-            value={this.state.name} 
-          />
-          <input 
-            className='stats-form-input' 
-            name='age' 
-            placeholder='Age...' 
-            type='text'
-            onChange={this.handleChange}
-            value={this.state.age} 
-          />
-          <input 
-            className='stats-form-input' 
-            name='weight'
-            placeholder='Weight...  (lbs)' 
-            type='text'
-            onChange={this.handleChange}
-            value={this.state.weight} 
-          />
-          <button 
-            className='stats-form-input'
-            onClick={this.handleSubmit}>Submit!</button>
+          (!this.props.user.name &&
+            !this.props.user.age &&
+            !this.props.user.weight) &&
+            <form className='stats-form'>
+            <input 
+              className='stats-form-input' 
+              name='name' 
+              placeholder='First Name...'
+              type='text'
+              onChange={this.handleChange}
+              value={this.state.name} 
+            />
+            <input 
+              className='stats-form-input' 
+              name='age' 
+              placeholder='Age...' 
+              type='text'
+              onChange={this.handleChange}
+              value={this.state.age} 
+            />
+            <input 
+              className='stats-form-input' 
+              name='weight'
+              placeholder='Weight...  (lbs)' 
+              type='text'
+              onChange={this.handleChange}
+              value={this.state.weight} 
+            />
+            <button 
+              className='stats-form-input'
+              onClick={this.handleSubmit}>Submit!</button>
           </form>
         }
         {
-          (this.props.user.name) &&
-          <h3 className='stats-greeting'>Hello, {this.props.user.name}!</h3>
+          (this.props.user.name &&
+            this.props.user.age &&
+            this.props.user.weight) &&
+          <section className='stats-greeting'>
+            <h3>Hello, {this.props.user.name}!</h3>
+            <p>Pick a planet below to simulate yourself there!</p>
+            <div className='stats-planets-list'>
+              {planetOptions}
+            </div>
+          </section>
         }
       </section>
     )
@@ -75,7 +105,8 @@ export class StatsForm extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.user
+  user: state.user,
+  planets: state.planets
 })
 
 const mapDispatchToProps = (dispatch) => ({

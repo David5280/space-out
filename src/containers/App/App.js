@@ -2,7 +2,7 @@ import React from 'react';
 import { getData } from '../../Utilz/apiCalls';
 import { loadPlanets, loadComplete } from '../../actions';
 import Header from '../../components/Header/Header';
-import MainDisplay from '../../components/MainDisplay/MainDisplay';
+import MainDisplay from '../MainDisplay/MainDisplay';
 import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';

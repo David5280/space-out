@@ -1,0 +1,34 @@
+.user-stats {
+  background-color: black;
+  width: 100vw;
+  height: 90vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  object-fit: cover;
+}
+
+.user-stats-background-container {
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.user-stats-background {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.Pluto-background {
+  bottom: 100px;
+}
+
+.user-stats-container {
+  position: fixed;
+  & h3 {
+    font-size: 3rem;
+  }
+}

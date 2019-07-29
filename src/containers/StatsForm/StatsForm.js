@@ -39,7 +39,7 @@ class StatsForm extends React.Component {
             key={planet.title}
           >
             <NavLink 
-              to={`/your-stats/${planet.title}`} 
+              to={`/stats/${planet.title}`} 
               >
               {planet.title}
             <img 

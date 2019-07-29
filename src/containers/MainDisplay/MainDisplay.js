@@ -19,22 +19,19 @@ export const MainDisplay = ({ planets, user }) => {
   });
   const routes = planets.map(planet => {
     return (
-      <div key={planet.title}>
+      <div key={planet.title} className='a'>
         <Route 
           exact path={`/${planet.title}`} 
           render={() => <PlanetInfo planet={planet}
         />
         } 
         />
-        ((user.name &&
-        user.age && 
-        user.weight) &&
         <Route 
           exact path={`/stats/${planet.title}`} 
           render={() => <UserStats planet={planet} user={user}
         />
         } 
-        />)
+        />
       </div>
     )
   });

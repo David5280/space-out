@@ -42,7 +42,7 @@ export const MainDisplay = ({ planets, user }) => {
     <main className='main-section-display'>
     {routes}
     {planets && <Route exact path='/' render={() => dataToDisplay} />}
-    <Route exact path='/enter-stats' component={statsForm} />
+    <Route exact path='/stats' component={statsForm} />
     </main>
   )
 };

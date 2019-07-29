@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserStats should match the snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`UserStats should match the snapshot with a user 1`] = `ShallowWrapper {}`;
+
+exports[`UserStats should match the snapshot with no user 1`] = `ShallowWrapper {}`;

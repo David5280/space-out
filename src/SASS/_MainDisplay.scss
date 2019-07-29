@@ -6,3 +6,15 @@
   overflow: scroll;
   width: 100vw;
 }
+
+.no-credentials-page {
+  width: 100vw;
+  height: 90vh;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 200px;
+  & a {
+    color: red;
+    text-decoration: none;
+  }
+}

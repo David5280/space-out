@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MainDisplay from './MainDisplay';
+import { MainDisplay } from './MainDisplay';
 
 describe('Main Display', () => {
   let wrapper;

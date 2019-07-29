@@ -7,7 +7,7 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const MainDisplay = ({ planets, user }) => {
+export const MainDisplay = ({ planets, user }) => {
   const dataToDisplay = planets.map(planet => {
     return (
       <PlanetCutout 
@@ -19,7 +19,7 @@ const MainDisplay = ({ planets, user }) => {
   });
   const routes = planets.map(planet => {
     return (
-      <div key={planet.id}>
+      <div key={planet.title}>
         <Route 
           exact path={`/${planet.title}`} 
           render={() => <PlanetInfo planet={planet}
@@ -49,7 +49,7 @@ const MainDisplay = ({ planets, user }) => {
 
 const mapStateToProps = (state) => ({
   user: state.user
-})
+});
 
 MainDisplay.propTypes = {
   planets: PropTypes.array

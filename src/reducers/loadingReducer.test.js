@@ -14,5 +14,5 @@ describe('loadingReducer', () => {
     expect(state).toEqual(true);
     const result = loadingReducer(state, action);
     expect(result).toEqual(false);
-  })
-})
+  });
+});

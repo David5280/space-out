@@ -22,13 +22,25 @@
   position: relative;
 }
 
+.Uranus-background,
 .Pluto-background {
   bottom: 100px;
 }
 
+.Neptune-background {
+  bottom: 150px;
+}
+
 .user-stats-container {
   position: fixed;
+  top: 100px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, .5);
   & h3 {
     font-size: 3rem;
+    text-align: center;
+  }
+  & p {
+    margin: 10px 0px;
   }
 }

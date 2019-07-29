@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 const Header = ({ planets }) => {
   const menuItems = planets.map(planet => {
     return (
-      <NavLink to={`/${planet.title}`} key={planet.title}>{planet.title}</NavLink>
+      <NavLink to={`/${planet.title}`} key={planet.id}>{planet.title}</NavLink>
     )
   })
   return (
@@ -22,7 +22,7 @@ const Header = ({ planets }) => {
         <div className='dropdown-content'>
           <NavLink exact to='/'>Home</NavLink>
           {menuItems}
-          <NavLink to='/enter-stats'>Get Trip Info!</NavLink>
+          <NavLink to='/stats'>Get Trip Info!</NavLink>
         </div>
       </div>
     </header>

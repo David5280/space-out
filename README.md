@@ -7,7 +7,7 @@ David Engel (https://github.com/David5280)
 
 ## Summary
 
-SPACE-OUT is my final solo project for module three at the Turing School of Software & Design.  This app is a database of planets in our solar-system (pluto included).  SPACE-OUT pulls from a custom [Google Sheets to API converter](https://sheety.co) which I composed in [this spreadsheet](https://tinyurl.com/yynlwpc7).  The homepage provides links in the dropdown menu to the left, and in the planet images.  Each link will take you to that planet's page, displaying relevant information.  Additionally, a user view some personalized information about each planet by clicking on ****** in the dropdown menu and entering some information.
+SPACE-OUT is my final solo project for module three at the Turing School of Software & Design.  This app is a database of planets in our solar-system (pluto included).  SPACE-OUT pulls from a custom [Google Sheets to API converter](https://sheety.co) which I composed in [this spreadsheet](https://tinyurl.com/yynlwpc7).  The homepage provides links in the dropdown menu to the left, and in the planet images.  Each link will take you to that planet's page, displaying relevant information.  Additionally, a user view some personalized information about each planet by clicking on 'Your Stats' in the dropdown menu and entering some information.
 
 SPACE-OUT was built in five days.
 

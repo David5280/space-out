@@ -54,7 +54,7 @@ describe('apiCalls', () => {
           ok: false
         });
       });
-      await expect(getData()).rejects.toEqual(Error('Error fetching Data'))
+      await expect(getData()).rejects.toEqual(Error('There was an error retrieving your planetary data...'))
     });
   });
 });

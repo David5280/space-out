@@ -1,0 +1,21 @@
+.error-page {
+  align-items: center;
+  background-color: black;
+  background-image: url('https://media.giphy.com/media/M21BGfVJ1ezvO/giphy.gif');
+  background-position: 50% 100px;
+  background-repeat: no-repeat;
+  background-size: 35%;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+}
+
+.error-message-container {
+  margin-top: 25px;
+}
+
+.error-message {
+  color: red;
+  font-size: 2rem;
+}

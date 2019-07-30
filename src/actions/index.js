@@ -11,3 +11,8 @@ export const addUser = (user) => ({
 export const loadComplete = () => ({
   type: 'LOAD_COMPLETE'
 });
+
+export const hasErrored = (message) => ({
+  type: 'HAS_ERRORED',
+  message
+})

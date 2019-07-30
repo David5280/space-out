@@ -23,7 +23,7 @@ const Header = ({ planets }) => {
         <div className='dropdown-content'>
           <NavLink exact to='/'>Home</NavLink>
           {menuItems}
-          <NavLink to='/stats'>Get Trip Info!</NavLink>
+          <NavLink to='/stats'>Your Stats</NavLink>
         </div>
       </div>
     </header>

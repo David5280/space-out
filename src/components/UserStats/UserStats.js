@@ -28,7 +28,7 @@ const UserStats = ({ planet, user }) => {
 
   const noUserStats = (
     <section className='no-credentials-page'>
-      <Link to='/enter-stats'>
+      <Link to='/stats'>
         Please enter your information to view this page.
       </Link>
     </section>

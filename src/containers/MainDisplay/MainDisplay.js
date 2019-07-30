@@ -17,6 +17,7 @@ export const MainDisplay = ({ planets, user }) => {
       />
     )
   });
+  
   const routes = planets.map(planet => {
     return (
       <div key={planet.title}>
@@ -35,9 +36,11 @@ export const MainDisplay = ({ planets, user }) => {
       </div>
     )
   });
+
   const statsForm = () => {
     return <StatsForm />
   };
+
   return (
     <main className='main-section-display'>
     {routes}

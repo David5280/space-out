@@ -52,6 +52,7 @@ export class StatsForm extends React.Component {
           </div>
         )
       });
+      
     return(
       <section className='form-container'>
         {

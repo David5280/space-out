@@ -18,3 +18,7 @@ describe('loadingReducer', () => {
     expect(result).toEqual(false);
   });
 });
+
+describe('errorReducer', () => {
+  it('should return an')
+})

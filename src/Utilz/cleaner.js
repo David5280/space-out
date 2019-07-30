@@ -22,7 +22,7 @@ return data.map(planet => {
       sunRevolution: planet.sunRevolution,
       title: planet.title,
       travelTime: planet.travelTime
-    };
+    }
   });
 };
 

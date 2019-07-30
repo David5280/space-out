@@ -13,7 +13,6 @@ return data.map(planet => {
       id: planet.id,
       image2: planet.image2,
       image: planet.image,
-      isFavored: false,
       key: planet.id,
       milesFromSun: planet.milesFromSun,
       moons: planet.moons,

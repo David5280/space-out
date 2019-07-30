@@ -1,4 +1,3 @@
-
 import { getData } from './apiCalls';
 
 describe('apiCalls', () => {

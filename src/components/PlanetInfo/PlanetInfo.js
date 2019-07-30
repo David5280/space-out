@@ -41,10 +41,10 @@ const PlanetInfo = ({ planet }) => {
       </article>
     </section>
   )
-}
+};
 
 PlanetInfo.propTypes = {
   planet: PropTypes.object
-}
+};
 
 export default PlanetInfo;

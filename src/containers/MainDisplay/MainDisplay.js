@@ -3,9 +3,9 @@ import PlanetCutout from '../../components/PlanetCutout/PlanetCutout';
 import PlanetInfo from '../../components/PlanetInfo/PlanetInfo';
 import UserStats from '../../components/UserStats/UserStats';
 import StatsForm from '../StatsForm/StatsForm';
+import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 export const MainDisplay = ({ planets, user }) => {
   const dataToDisplay = planets.map(planet => {
@@ -52,7 +52,8 @@ const mapStateToProps = (state) => ({
 });
 
 MainDisplay.propTypes = {
-  planets: PropTypes.array
-}
+  planets: PropTypes.array,
+  user: PropTypes.object
+};
 
 export default connect(mapStateToProps)(MainDisplay);

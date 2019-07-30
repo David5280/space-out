@@ -10,6 +10,6 @@ const LoadingDisplay = () => {
       />
     </section>
   )
-}
+};
 
 export default LoadingDisplay;

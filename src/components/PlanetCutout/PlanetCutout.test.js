@@ -1,6 +1,6 @@
 import React from 'react'
-import { shallow } from 'enzyme';
 import PlanetCutout from './PlanetCutout';
+import { shallow } from 'enzyme';
 
 describe('PlanetCutout', () => {
   it('should match the snapshot', () => {

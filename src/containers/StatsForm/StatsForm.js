@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { addUser } from '../../actions';
 import { connect } from 'react-redux';
@@ -11,17 +12,17 @@ export class StatsForm extends React.Component {
       age: '',
       weight: ''
     }
-  }
+  };
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
-  }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addUser(this.state);
     this.clearState();
-  }
+  };
 
   clearState = () => {
     this.setState({
@@ -29,7 +30,7 @@ export class StatsForm extends React.Component {
       age: '',
       weight: ''
     })
-  }
+  };
 
   render() {
     const planetOptions = this.props.planets.map(planet => {
@@ -40,7 +41,7 @@ export class StatsForm extends React.Component {
           >
             <NavLink 
               to={`/stats/${planet.title}`} 
-              >
+            >
               {planet.title}
             <img 
               src={planet.cutout} 
@@ -50,7 +51,7 @@ export class StatsForm extends React.Component {
             </NavLink>
           </div>
         )
-      })
+      });
     return(
       <section className='form-container'>
         {
@@ -102,15 +103,21 @@ export class StatsForm extends React.Component {
       </section>
     )
   }
-}
+};
 
 const mapStateToProps = (state) => ({
   user: state.user,
   planets: state.planets
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addUser:(user) => dispatch(addUser(user))
-})
+});
+
+StatsForm.propTypes = {
+  user: PropTypes.object,
+  planets: PropTypes.array,
+  addUser: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(StatsForm);

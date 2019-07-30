@@ -17,16 +17,19 @@ describe('App', () => {
         loadPlanets: jest.fn(),
       }
       wrapper = shallow(<App {...props} />, {disableLifecycleMethods: true})
-    })
+    });
+
     it('should match snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
+
     it('should call retrieveData when component mounts', () => {
       wrapper.instance().retrieveData = jest.fn()
       wrapper.instance().componentDidMount();
       expect(wrapper.instance().retrieveData).toHaveBeenCalled()
     });
   });
+
   describe('mapStateToProps', () => {
     it('should return an object with the planets array', () => {
       const mockState = {
@@ -39,6 +42,7 @@ describe('App', () => {
       expect(mappedProps).toEqual(expected);
     });
   });
+
   describe('mapDispatchToProps', () => {
     it('calls dispatch with planets when loadPlanets is called', () => {
       const mockPlanets = [
@@ -51,6 +55,7 @@ describe('App', () => {
       mappedProps.loadPlanets(mockPlanets);
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
+    
     it('calls dispatch when loadComplete is called', () => {
       const mockDispatch = jest.fn();
       const actionToDispatch = loadComplete();

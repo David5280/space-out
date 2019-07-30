@@ -15,11 +15,11 @@ const PlanetCutout = ({ cutout, title }) => {
       </NavLink>
     </article>
   )
-}
+};
 
 PlanetCutout.propTypes = {
   cutout: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
-}
+};
 
 export default PlanetCutout;

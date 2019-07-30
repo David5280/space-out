@@ -13,6 +13,6 @@ const ErrorPage = ({ message }) => {
 
 ErrorPage.propTypes = {
   message: PropTypes.string
-}
+};
 
 export default ErrorPage;

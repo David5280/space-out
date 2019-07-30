@@ -32,4 +32,4 @@ SPACE-OUT was built in five days.
 
 ###  Screenshots
 
- ![SPACE-OUT]()
+ ![SPACE-OUT](https://github.com/David5280/space-out/blob/master/src/preview/SPACE-OUT-clip.gif)

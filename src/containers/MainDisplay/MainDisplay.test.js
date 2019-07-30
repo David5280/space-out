@@ -14,4 +14,4 @@ describe('Main Display', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-})
+});

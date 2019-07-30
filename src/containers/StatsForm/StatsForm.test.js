@@ -29,9 +29,9 @@ describe('StatsForm', () => {
       age: null,
       weight: ''
     };
-    wrapper = shallow(<StatsForm planets={mockPlanets} user={mockUser}/>)
+    wrapper = shallow(<StatsForm planets={mockPlanets} user={mockUser} addUser={jest.fn()}/>)
+  });
 
-  })
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
@@ -51,5 +51,15 @@ describe('StatsForm', () => {
     wrapper.instance().handleSubmit = jest.fn();
     wrapper.find('.submit-btn').simulate('click');
     expect(wrapper.instance().handleSubmit).toHaveBeenCalled();
+  });
+  it('should clear state when clearState is called', () => {
+    wrapper.setState({ name: 'dave', age: '25', weight: '180' })
+    expect(wrapper.state('name')).toEqual('dave');
+    expect(wrapper.state('age')).toEqual('25');
+    expect(wrapper.state('weight')).toEqual('180');
+    wrapper.instance().clearState()
+    expect(wrapper.state('name')).toEqual('');
+    expect(wrapper.state('age')).toEqual('');
+    expect(wrapper.state('weight')).toEqual('');
   });
 });

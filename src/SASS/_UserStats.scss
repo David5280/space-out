@@ -1,25 +1,39 @@
 .user-stats {
+  align-items: center;
   background-color: black;
-  width: 100vw;
-  height: 90vh;
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 90vh;
   object-fit: cover;
+  width: 100vw;
 }
 
 .user-stats-background-container {
   height: 90vh;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
   z-index: 0;
 }
 
 .user-stats-background {
-  width: 100%;
   object-fit: cover;
   position: relative;
+  width: 100%;
+}
+
+.user-stats-container {
+  background-color: rgba(0, 0, 0, .5);
+  padding: 20px;
+  position: fixed;
+  top: 30%;
+  & h3 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  & p {
+    margin: 10px 0px;
+  }
 }
 
 .Venus-background {
@@ -35,19 +49,5 @@
 }
 
 .Pluto-background {
-  bottom: 225px;
-}
-
-.user-stats-container {
-  position: fixed;
-  top: 30%;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, .5);
-  & h3 {
-    font-size: 3rem;
-    text-align: center;
-  }
-  & p {
-    margin: 10px 0px;
-  }
+  bottom: 200px;
 }

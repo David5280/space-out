@@ -5,4 +5,4 @@ export const planetsReducer = (state = [], action) => {
     default:
       return state;
   }
-}
+};

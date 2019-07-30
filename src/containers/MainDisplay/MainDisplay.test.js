@@ -11,6 +11,7 @@ describe('Main Display', () => {
     ];
     wrapper = shallow(<MainDisplay planets={mockPlanets} />);
   });
+  
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });

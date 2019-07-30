@@ -10,13 +10,16 @@ describe('actions', () => {
     const result = actions.loadPlanets(planets)
     expect(result).toEqual(expectedAction);
   });
+
   it('should have a type of LOAD_COMPLETE', () => {
     const expectedAction = {
       type: 'LOAD_PLANETS',
     };
     const result = actions.loadPlanets()
     expect(result).toEqual(expectedAction);
-  });  it('should have a type of ADD_USER', () => {
+  });  
+  
+  it('should have a type of ADD_USER', () => {
     const user = { name: 'dave', age: 25, weight: '180' }
     const expectedAction = {
       type: 'ADD_USER',

@@ -1,11 +1,11 @@
 import React from 'react';
-import { getData } from '../../Utilz/apiCalls';
-import { loadPlanets, loadComplete } from '../../actions';
 import Header from '../../components/Header/Header';
 import MainDisplay from '../MainDisplay/MainDisplay';
 import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { loadPlanets, loadComplete } from '../../actions';
+import { getData } from '../../Utilz/apiCalls';
+import { connect } from 'react-redux';
 import '../../SASS/Index.scss';
 
 export class App extends React.Component {
@@ -30,7 +30,7 @@ export class App extends React.Component {
       </div>
     )
   }
-}
+};
 
 export const mapStateToProps = (state) => ({
   planets:  state.planets,
@@ -40,13 +40,13 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
   loadPlanets: (planets) => dispatch(loadPlanets(planets)),
   loadComplete: () => dispatch(loadComplete())
-})
+});
 
 App.propTypes = {
   planets: PropTypes.array,
   loading: PropTypes.bool,
   loadPlanets: PropTypes.func,
   loadComplete: PropTypes.func
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

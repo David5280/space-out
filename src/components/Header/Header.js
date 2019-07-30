@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { NavLink, Link } from 'react-router-dom';
 
 const Header = ({ planets }) => {
@@ -6,7 +7,7 @@ const Header = ({ planets }) => {
     return (
       <NavLink to={`/${planet.title}`} key={planet.title}>{planet.title}</NavLink>
     )
-  })
+  });
   return (
     <header>
       <Link to='/'>
@@ -27,6 +28,10 @@ const Header = ({ planets }) => {
       </div>
     </header>
   )
+};
+
+Header.propTypes = {
+  planets: PropTypes.array
 }
 
 export default Header;

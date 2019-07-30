@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
 import PlanetInfo from './PlanetInfo';
+import { shallow } from 'enzyme';
 
 describe('PlanetInfo', () => {
   let wrapper;
@@ -31,6 +31,7 @@ describe('PlanetInfo', () => {
     };
     wrapper = shallow(<PlanetInfo planet={mockPlanet} />);
   });
+  
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });

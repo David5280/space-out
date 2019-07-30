@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
-import { loadPlanets } from '../../actions'; 
+import { loadPlanets, loadComplete } from '../../actions'; 
 
 jest.mock('../../utilz/apiCalls', () => ({
   getData: jest.fn().mockImplementation(() => {
@@ -20,6 +20,11 @@ describe('App', () => {
     })
     it('should match snapshot', () => {
       expect(wrapper).toMatchSnapshot();
+    });
+    it('should call retrieveData when component mounts', () => {
+      wrapper.instance().retrieveData = jest.fn()
+      wrapper.instance().componentDidMount();
+      expect(wrapper.instance().retrieveData).toHaveBeenCalled()
     });
   });
   describe('mapStateToProps', () => {
@@ -44,6 +49,13 @@ describe('App', () => {
       const actionToDispatch = loadPlanets(mockPlanets);
       const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.loadPlanets(mockPlanets);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+    it('calls dispatch when loadComplete is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = loadComplete();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.loadComplete();
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });

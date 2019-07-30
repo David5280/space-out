@@ -30,6 +30,6 @@ SPACE-OUT was built in five days.
 5.  experiment with the different functionalities & see how much you would weigh on the various planets surfaces!
 
 
-###  Screenshots
+###  Preview
 
  ![SPACE-OUT](https://github.com/David5280/space-out/blob/master/src/preview/SPACE-OUT-clip.gif)
